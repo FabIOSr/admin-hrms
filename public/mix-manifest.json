@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/assets/css/toastr.css": "/assets/css/toastr.css",
     "/assets/css/bundle.min.css": "/assets/css/bundle.min.css",
     "/assets/css/dataTables.bootstrap4.min.css": "/assets/css/dataTables.bootstrap4.min.css",
     "/assets/css/select2.min.css": "/assets/css/select2.min.css",
@@ -54,6 +55,8 @@
     "/assets/img/logo.png": "/assets/img/logo.png",
     "/assets/img/logo2.png": "/assets/img/logo2.png",
     "/assets/img/logo3.png": "/assets/img/logo3.png",
+    "/assets/img/logo4.jpg": "/assets/img/logo4.jpg",
+    "/assets/img/logo5.png": "/assets/img/logo5.png",
     "/assets/img/placeholder.jpg": "/assets/img/placeholder.jpg",
     "/assets/img/saude1.jpg": "/assets/img/saude1.jpg",
     "/assets/img/user.jpg": "/assets/img/user.jpg",

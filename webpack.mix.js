@@ -12,6 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix
+    .sass('resources/sass/toastr.scss', 'public/assets/css')
     .styles([
         'resources/assets/css/bootstrap.min.css',
         'resources/assets/css/font-awesome.min.css',
@@ -38,7 +39,8 @@ mix
     .scripts('resources/assets/js/app.js', 'public/assets/js/app.js')
     .copyDirectory('resources/assets/fonts/', 'public/assets/fonts')
     .copyDirectory('resources/assets/img/', 'public/assets/img')
-    .js('resources/js/app.js', 'public/js')
+    .js('resources/js/app.js', 'public/js') 
+
     .postCss('resources/css/app.css', 'public/css', [
         //
     ])

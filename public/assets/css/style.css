@@ -187,7 +187,7 @@ a:focus {
 	border-color: #e3e3e3;
     box-shadow: none;
     font-size: 15px;
-    height: 44px;
+    height: 40px;
 }
 .form-control:focus {
 	border-color: #ccc;
@@ -231,7 +231,7 @@ textarea.form-control {
 }
 .form-control-sm.form-control {
 	height: 30px;
-	border-radius: 0;
+	border-radius: 2;
 }
 .input-group.input-group-lg .form-control {
 	height: 46px;
@@ -1907,7 +1907,7 @@ table.dataTable thead > tr > td.sorting {
     background-color: #fbfbfb;
     border: 1px solid #e3e3e3;
     border-radius: 4px;
-    height: 46px;
+    height: 40px;
 }
 .account-box label {
 	color: #1f1f1f;

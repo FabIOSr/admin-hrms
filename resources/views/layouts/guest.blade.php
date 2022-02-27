@@ -19,6 +19,7 @@
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 		
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -31,7 +32,7 @@
 		<!-- Main Wrapper -->
         <div class="main-wrapper">
 			<div class="account-content">
-				<a href="job-list.html" class="btn btn-primary apply-btn">Apply Job</a>
+				{{-- <a href="job-list.html" class="btn btn-primary apply-btn">Apply Job</a> --}}
 				<div class="container">
                     @yield('content')
 				</div>

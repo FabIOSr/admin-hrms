@@ -1,10 +1,12 @@
 @extends('layouts.guest')
 
 @section('afterJs')
+<script src="{{ asset('js/pages/auth/login.js') }}"></script>
 <script>
-    $(document).ready(()=>{
-        toastr.info('Ola, Bem-Vindo, efetue seu login para ter acesso aos módulos!', 'Área de Login')
-    })
+    $(function(){
+        toastr.info('Ola, Bem-Vindo, efetue seu login para ter acesso aos módulos!', 'Área de Login');        
+    });
+    
 </script>
 @endsection
 
@@ -15,10 +17,15 @@
         <p class="account-subtitle">Access to our dashboard</p>
         
         <!-- Account Form -->
-        <form action="index.html">
+        <form name="login" action="{{ route('login') }}" method="POST" autocomplete="off">
             <div class="form-group">
                 <label>Usuário</label>
-                <input class="form-control" type="text">
+                <input 
+                    name="username"
+                    class="form-control" 
+                    type="text"
+                    value="517811"
+                    autofocus>
             </div>
             <div class="form-group">
                 <div class="row">
@@ -26,12 +33,12 @@
                         <label>Senha</label>
                     </div>
                     <div class="col-auto">
-                        <a class="text-muted" href="forgot-password.html">
+                        <a class="text-muted" tabindex="-1" href="forgot-password.html">
                             Forgot password?
                         </a>
                     </div>
                 </div>
-                <input class="form-control" type="password">
+                <input name="password" class="form-control" type="password">
             </div>
             <div class="form-group text-center">
                 <button class="btn btn-primary account-btn" type="submit">Login</button>
@@ -39,9 +46,7 @@
             <div class="account-footer">
                 <p>Don't have an account yet? <a href="register.html">Register</a></p>
             </div>
-        </form>
-        <!-- /Account Form -->
-        
+        </form>        
     </div>
 </div>
 @endsection

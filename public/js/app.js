@@ -2164,6 +2164,8 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./setup */ "./resources/js/setup.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -2195,6 +2197,20 @@ window.toastr = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/setup.js":
+/*!*******************************!*\
+  !*** ./resources/js/setup.js ***!
+  \*******************************/
+/***/ (() => {
+
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
 
 /***/ }),
 

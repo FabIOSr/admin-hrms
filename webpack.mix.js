@@ -39,7 +39,8 @@ mix
     .scripts('resources/assets/js/app.js', 'public/assets/js/app.js')
     .copyDirectory('resources/assets/fonts/', 'public/assets/fonts')
     .copyDirectory('resources/assets/img/', 'public/assets/img')
-    .js('resources/js/app.js', 'public/js') 
+    .js('resources/js/app.js', 'public/js')
+    .js('resources/js/auth/login.js', 'public/js/pages/auth')
 
     .postCss('resources/css/app.css', 'public/css', [
         //

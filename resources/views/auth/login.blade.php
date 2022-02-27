@@ -3,9 +3,9 @@
 @section('afterJs')
 <script src="{{ asset('js/pages/auth/login.js') }}"></script>
 <script>
-    $(function(){
-        toastr.info('Ola, Bem-Vindo, efetue seu login para ter acesso aos módulos!', 'Área de Login');        
-    });
+    // $(function(){
+    //     toastr.info('Ola, Bem-Vindo, efetue seu login para ter acesso aos módulos!', 'Área de Login');        
+    // });
     
 </script>
 @endsection
@@ -13,8 +13,8 @@
 @section('content')
 <div class="account-box">
     <div class="account-wrapper">
-        <h3 class="account-title">Login</h3>
-        <p class="account-subtitle">Access to our dashboard</p>
+        <h3 class="account-title">Conecte-se</h3>
+        <p class="account-subtitle">Identificação de Usuário</p>
         
         <!-- Account Form -->
         <form name="login" action="{{ route('login') }}" method="POST" autocomplete="off">
@@ -25,6 +25,7 @@
                     class="form-control" 
                     type="text"
                     value="517811"
+                    required
                     autofocus>
             </div>
             <div class="form-group">
@@ -38,10 +39,17 @@
                         </a>
                     </div>
                 </div>
-                <input name="password" class="form-control" type="password">
+                <input 
+                    name="password"
+                    required
+                    class="form-control" 
+                    type="password"
+                >
             </div>
             <div class="form-group text-center">
-                <button class="btn btn-primary account-btn" type="submit">Login</button>
+                <button 
+                    class="btn btn-primary account-btn" 
+                    type="submit">Entrar</button>
             </div>
             <div class="account-footer">
                 <p>Don't have an account yet? <a href="register.html">Register</a></p>

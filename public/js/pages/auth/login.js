@@ -3,29 +3,32 @@ var __webpack_exports__ = {};
 /*!************************************!*\
   !*** ./resources/js/auth/login.js ***!
   \************************************/
-$('form[name="login').submit(function (event) {
+$('form[name="login').on('submit', function (event) {
   event.preventDefault();
   var form = $(this);
   var action = form.attr('action');
   var username = form.find('input[name="username"]').val();
   var password = form.find('input[name="password"]').val();
-  console.log(action, username, password);
+  var buttonSubmit = form.find('button[type="submit"]');
+  buttonSubmit.innerHTML = "Autenticando aguarde...";
+  buttonSubmit.attr('disabled', 'disabled');
   $.post(action, {
     username: username,
     password: password
   }, function (response) {
-    console.log(response);
-
     if (response.error) {
       toastr.error(response.error);
+      buttonSubmit.removeAttr('disabled');
       return;
     }
 
     if (response.redirect) {
+      buttonSubmit.innerText = "Autenticado";
+      buttonSubmit.text = "Autenticado";
       toastr.success(response.message);
       setTimeout(function () {
         window.location.href = response.redirect;
-      }, 2500);
+      }, 2000);
     }
   }, 'json');
 });

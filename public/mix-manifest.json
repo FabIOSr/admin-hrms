@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/pages/auth/login.js": "/js/pages/auth/login.js",
+    "/js/pages/auth/register.js": "/js/pages/auth/register.js",
     "/css/app.css": "/css/app.css",
     "/assets/css/toastr.css": "/assets/css/toastr.css",
     "/assets/css/bundle.min.css": "/assets/css/bundle.min.css",

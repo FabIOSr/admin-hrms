@@ -41,6 +41,7 @@ mix
     .copyDirectory('resources/assets/img/', 'public/assets/img')
     .js('resources/js/app.js', 'public/js')
     .js('resources/js/auth/login.js', 'public/js/pages/auth')
+    .js('resources/js/auth/register.js', 'public/js/pages/auth')
 
     .postCss('resources/css/app.css', 'public/css', [
         //

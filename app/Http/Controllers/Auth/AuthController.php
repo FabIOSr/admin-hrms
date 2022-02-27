@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -31,9 +30,32 @@ class AuthController extends Controller
 
         $name = auth()->user()->name;
 
+        //$this->authenticated($request->getClientIp());
+
         return response()->json([
             'message' => "Você efetou login como \" ${name} \", com sucesso!",
-            'redirect' => url('/')
+            'redirect' => route('welcome')
         ]);
+    }
+
+    private function authenticated(string $ip)
+    {
+        $user = Auth::user();
+        $user->update([
+            'last_login_at' => date('Y-m-d H:i:s'),
+            'last_login_ip' => $ip,
+        ]);
+
+    }
+
+    public function register(Request $request)
+    {
+        dd($request->all());
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

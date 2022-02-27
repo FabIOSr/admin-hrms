@@ -212,7 +212,8 @@
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="profile.html">My Profile</a>
                 <a class="dropdown-item" href="settings.html">Settings</a>
-                <a class="dropdown-item" href="login.html">Logout</a>
+                <a class="dropdown-item" href="javascript:void()" onclick="document.getElementById('logout').submit();">Sair</a>
+                <form action="{{ route('logout') }}" method="post" id="logout">@csrf</form>
             </div>
         </li>
     </ul>
@@ -224,7 +225,7 @@
         <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item" href="profile.html">My Profile</a>
             <a class="dropdown-item" href="settings.html">Settings</a>
-            <a class="dropdown-item" href="login.html">Logout</a>
+            <a class="dropdown-item" href="javascript:void()" onclick="document.getElementById('logout').submit();">Sair</a>
         </div>
     </div>
     <!-- /Mobile Menu -->

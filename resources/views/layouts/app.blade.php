@@ -26,6 +26,7 @@
 					</x-page-header>
 					<!-- Content Starts -->
 						Content Starts Here
+						{{ Request::segment(0) }}
 					<!-- /Content End -->
 					
                 </div>

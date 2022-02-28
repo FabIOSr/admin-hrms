@@ -52,7 +52,7 @@
                     type="submit">Entrar</button>
             </div>
             <div class="account-footer">
-                <p>Don't have an account yet? <a href="{{ route('registerForm') }}">Register</a></p>
+                <p>{{ __('message.login.Don\/\'t have an account yet?') }} <a href="{{ route('registerForm') }}">{{ __('message.login.Register') }}</a></p>
             </div>
         </form>        
     </div>

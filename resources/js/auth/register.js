@@ -1,3 +1,5 @@
+const { message } = require("laravel-mix/src/Log");
+
 $('form[name="register"]').on('submit',function(event){
     event.preventDefault();
     const form = $(this);
@@ -18,13 +20,7 @@ $('form[name="register"]').on('submit',function(event){
 
         if(response.errors){
             let errors = response.errors;
-            let err= [];
-            for (let [key, value] of Object.entries(errors)) {
-                toastr.warning(value, {timeOut: 2500});
-                //err.push(value);
-
-            }
-            toastr.error(response.error, {timeOut: 5000});
+            messages(errors);
             return;
         }
 

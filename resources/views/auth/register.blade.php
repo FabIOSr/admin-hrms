@@ -47,7 +47,7 @@
                 <button class="btn btn-primary account-btn" type="submit">Registrar</button>
             </div>
             <div class="account-footer">
-                <p>Already have an account? <a href="login.html">Login</a></p>
+                <p>{{ __('message.register.Already have an account?') }} <a href="{{ route('loginForm') }}">{{ __('message.register.login') }}</a></p>
             </div>
         </form>
         <!-- /Account Form -->

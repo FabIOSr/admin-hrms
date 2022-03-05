@@ -9,6 +9,9 @@ $('form[name="register"]').on('submit',function(event){
     const email = form.find('input[name="email"]').val();
     const password = form.find('input[name="password"]').val();
     const password_confirmation = form.find('input[name="password_confirmation"]').val();
+    const buttonSubmit = form.find('button[type="submit"]');
+    buttonSubmit.text("Enviando registro aguarde...");
+    buttonSubmit.attr('disabled','disabled');
 
     $.post(action, {
         registration,
@@ -21,10 +24,12 @@ $('form[name="register"]').on('submit',function(event){
         if(response.errors){
             let errors = response.errors;
             messages(errors);
+            buttonSubmit.removeAttr('disabled').text('Registrar');
             return;
         }
 
         if(response.redirect){
+            buttonSubmit.text("Redirecionando para tela de login");
             toastr.success(response.message);
             setTimeout(()=> { window.location.href = response.redirect },2000);
         }

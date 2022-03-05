@@ -10,7 +10,7 @@ $('form[name="login').on('submit', function (event) {
   var username = form.find('input[name="username"]').val();
   var password = form.find('input[name="password"]').val();
   var buttonSubmit = form.find('button[type="submit"]');
-  buttonSubmit.innerHTML = "Autenticando aguarde...";
+  buttonSubmit.text("Autenticando aguarde...");
   buttonSubmit.attr('disabled', 'disabled');
   $.post(action, {
     username: username,
@@ -19,12 +19,12 @@ $('form[name="login').on('submit', function (event) {
     if (response.error) {
       toastr.error(response.error);
       buttonSubmit.removeAttr('disabled');
+      buttonSubmit.text("Entrar");
       return;
     }
 
     if (response.redirect) {
-      buttonSubmit.innerText = "Autenticado";
-      buttonSubmit.text = "Autenticado";
+      buttonSubmit.text("Autenticado");
       toastr.success(response.message);
       setTimeout(function () {
         window.location.href = response.redirect;

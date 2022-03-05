@@ -2059,6 +2059,9 @@ $('form[name="register"]').on('submit', function (event) {
   var email = form.find('input[name="email"]').val();
   var password = form.find('input[name="password"]').val();
   var password_confirmation = form.find('input[name="password_confirmation"]').val();
+  var buttonSubmit = form.find('button[type="submit"]');
+  buttonSubmit.text("Enviando registro aguarde...");
+  buttonSubmit.attr('disabled', 'disabled');
   $.post(action, {
     registration: registration,
     name: name,
@@ -2069,10 +2072,12 @@ $('form[name="register"]').on('submit', function (event) {
     if (response.errors) {
       var errors = response.errors;
       messages(errors);
+      buttonSubmit.removeAttr('disabled').text('Registrar');
       return;
     }
 
     if (response.redirect) {
+      buttonSubmit.text("Redirecionando para tela de login");
       toastr.success(response.message);
       setTimeout(function () {
         window.location.href = response.redirect;

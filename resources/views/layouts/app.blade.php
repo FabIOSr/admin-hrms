@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     @includeIf('layouts.includes.head')
+	@livewireStyles
     <body>
 		<!-- Main Wrapper -->
         <div class="main-wrapper">
@@ -39,6 +40,7 @@
 		<!-- /Main Wrapper -->
 		
 		@includeIf('layouts.includes.scripts')
+		@livewireScripts
 		
     </body>
 </html>

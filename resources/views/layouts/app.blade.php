@@ -20,14 +20,8 @@
 				<!-- Page Content -->
                 <div class="content container-fluid">
 					
-					<x-page-header>
-                        @slot('title')
-                        Page Blank
-                        @endslot
-					</x-page-header>
 					<!-- Content Starts -->
-						Content Starts Here
-						{{ Request::segment(0) }}
+						@yield('content')
 					<!-- /Content End -->
 					
                 </div>

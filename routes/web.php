@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\HR\DepartmentController;
 
 Route::group([
     'middleware' => ['guest']
@@ -16,6 +17,9 @@ Route::group([
     'middleware' => ['auth']
 ],function(){
     Route::post('logout',[AuthController::class, 'logout'])->name('logout')->middleware('auth');
+
+    // Departments
+    Route::get('hr/departments',[DepartmentController::class, 'index'])->name('hr.departments');
 
     Route::get('/', function () {
         return view('welcome');

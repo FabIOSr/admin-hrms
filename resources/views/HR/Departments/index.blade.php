@@ -56,13 +56,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form name="add_department" action="{{ route('hr.department.store') }}" autocomplete="off">
                     <div class="form-group">
-                        <label>Department Name <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text">
+                        <label>Nome departamento<span class="text-danger">*</span></label>
+                        <input name="department_name" class="form-control" type="text" required>
                     </div>
                     <div class="submit-section">
-                        <button class="btn btn-primary submit-btn">Submit</button>
+                        <button type="submit" class="btn btn-primary submit-btn">Submit</button>
                     </div>
                 </form>
             </div>
@@ -126,4 +126,5 @@
 @section('beforeJs')
 <script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('js/pages/hr/departments/departments.js') }}"></script>
 @endsection

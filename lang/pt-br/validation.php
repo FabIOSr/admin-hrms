@@ -116,5 +116,6 @@ return [
         'registration' => 'matricula',
         'name' => 'nome',
         'password' => 'senha',
+        'department_name' => 'nome do departamento'
     ],
 ];

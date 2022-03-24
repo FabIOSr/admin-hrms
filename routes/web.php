@@ -20,6 +20,7 @@ Route::group([
 
     // Departments
     Route::get('hr/departments',[DepartmentController::class, 'index'])->name('hr.departments');
+    Route::post('hr/department/store',[DepartmentController::class, 'store'])->name('hr.department.store');
 
     Route::get('/', function () {
         return view('welcome');

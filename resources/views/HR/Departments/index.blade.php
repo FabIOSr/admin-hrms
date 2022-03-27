@@ -82,13 +82,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form name="edit_department" action="{{ route('hr.department.update') }}" autocomplete="off">
                     <div class="form-group">
                         <label>Department Name <span class="text-danger">*</span></label>
-                        <input class="form-control" value="IT Management" type="text">
+                        <input name="department_name" class="form-control" type="text">
                     </div>
                     <div class="submit-section">
-                        <button class="btn btn-primary submit-btn">Save</button>
+                        <button class="btn btn-primary submit-btn">{{ __('message.btn.update') }}</button>
                     </div>
                 </form>
             </div>

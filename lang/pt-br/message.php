@@ -10,5 +10,8 @@ return [
     'login' => [
         'Don\/\'t have an account yet?' => 'Não tem uma conta ainda?',
         'Register' => 'Registrar'
+    ],
+    'btn' => [
+        'update' => 'Atualizar'
     ]
 ];

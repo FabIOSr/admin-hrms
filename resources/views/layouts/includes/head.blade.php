@@ -12,7 +12,7 @@
     
     <!-- bundle CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/bundle.min.css') }}">
-    @yield('beforeCss')    
+    @stack('beforeCss')    
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/toastr.css') }}">

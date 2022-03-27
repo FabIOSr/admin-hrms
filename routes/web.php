@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HR\DepartmentController;
+use App\Http\Livewire\Hrms\Departments\Index;
 
 Route::group([
     'middleware' => ['guest']
@@ -19,8 +20,10 @@ Route::group([
     Route::post('logout',[AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
     // Departments
-    Route::get('hr/departments',[DepartmentController::class, 'index'])->name('hr.departments');
+    // Route::get('hrms/departments',[DepartmentController::class, 'index'])->name('hr.departments');
+    Route::get('hrms/departments', Index::class)->name('hr.departments');
     Route::post('hr/department/store',[DepartmentController::class, 'store'])->name('hr.department.store');
+    Route::post('hr/department/update',[DepartmentController::class, 'update'])->name('hr.department.update');
 
     Route::get('/', function () {
         return view('welcome');

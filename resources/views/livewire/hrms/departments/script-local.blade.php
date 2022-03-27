@@ -9,6 +9,9 @@
         Livewire.on('modalClose', (modalId) => {
             $(modalId).modal('hide')
         })
+        Livewire.on('success', (message) => {
+            toastr.success(message);
+        })
         Livewire.hook('component.initialized', (component) => {})
         Livewire.hook('element.initialized', (el, component) => {})
         Livewire.hook('element.updating', (fromEl, toEl, component) => {})
